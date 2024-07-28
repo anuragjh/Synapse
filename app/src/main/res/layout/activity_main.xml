@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorOnPrimary"
+        android:id="@+id/toolbar"
+        android:padding="12dp"
+        android:elevation="0.1dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/app_name"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimaryText"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/notification_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/dummy"
+            app:tint="@color/colorSecondaryText"
+            android:contentDescription="NOTIFICATION" />
+    </RelativeLayout>
+
+    <!-- Your main content goes here -->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="true"
+        android:visibility="gone" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_nav_background"
+        app:itemIconTint="@color/colorPrimaryText"
+        android:padding="12dp"
+        app:itemPaddingTop="8dp"
+        android:layout_margin="12dp"
+        app:itemTextColor="@color/colorSecondaryText"
+        app:itemBackground="@drawable/bottom_nav_item_selected"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

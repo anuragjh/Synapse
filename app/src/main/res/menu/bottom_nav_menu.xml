@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_home"
+        android:title="Home"
+
+        android:icon="@drawable/dummy"
+
+        android:checked="true" />
+    <item
+        android:id="@+id/item_search"
+        android:title="Search"
+        android:icon="@drawable/dummy"
+        />
+    <item
+        android:id="@+id/item_notifications"
+        android:title="Hangit"
+        android:icon="@drawable/dummy"
+        />
+    <item
+        android:id="@+id/item_profile"
+        android:title="Profile"
+        android:icon="@drawable/dummy"
+        />
+</menu>
