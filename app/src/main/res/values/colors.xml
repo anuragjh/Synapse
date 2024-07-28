@@ -14,7 +14,7 @@
 
     <!-- Text colors -->
     <color name="colorPrimaryText">#212121</color>
-    <color name="colorSecondaryText">#757575</color>
+    <color name="colorSecondaryText">#000000</color>
 
     <!-- Additional colors -->
     <color name="colorError">#D32F2F</color>

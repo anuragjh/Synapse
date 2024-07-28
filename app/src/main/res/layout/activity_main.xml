@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        app:lottie_rawRes="@raw/loading"
+        app:lottie_rawRes="@raw/loading1"
         app:lottie_autoPlay="false"
         app:lottie_loop="true"
         android:visibility="gone" />
