@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "332358459196",
+    "project_id": "synapse-2577e",
+    "storage_bucket": "synapse-2577e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332358459196:android:b000baf79a4d71f0fd4839",
+        "android_client_info": {
+          "package_name": "com.example.techtangle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVoZgEiupvDJXX0V7ZkuNkHi1m1Bn6_Fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,64 +1,133 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
 
-    <!-- Toolbar -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorOnPrimary"
-        android:id="@+id/toolbar"
-        android:padding="12dp"
-        android:elevation="0.1dp">
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp">
 
+        <!-- Profile Picture -->
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/profile"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <!-- User Name -->
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="@string/app_name"
-            android:textSize="24sp"
+            android:text="User not found"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
+            android:fontFamily="sans-serif-thin"
             android:textColor="@color/colorPrimaryText"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_alignTop="@id/profile_image" />
 
-        <ImageButton
-            android:id="@+id/notification_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+        <!-- User Occupation -->
+        <TextView
+            android:id="@+id/occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Unknown"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_below="@id/username"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="12dp"
+            android:textFontWeight="900" />
+
+        <!-- Notification Button -->
+        <ImageView
+            android:id="@+id/notification_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/circular_bg"
+            android:padding="8dp"
+            android:src="@drawable/icons_notification"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="12dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_centerVertical="true"
+            android:elevation="1dp" />
+
+        <!-- Settings Button -->
+        <ImageView
+            android:id="@+id/settings_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/circular_bg"
+            android:padding="8dp"
             android:src="@drawable/dummy"
-            app:tint="@color/colorSecondaryText"
-            android:contentDescription="NOTIFICATION" />
+            android:layout_toLeftOf="@id/notification_button"
+            android:layout_centerVertical="true"
+            android:elevation="1dp" />
     </RelativeLayout>
 
-    <!-- Your main content goes here -->
+    <!-- Search Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/search_bar_bg"
+        android:padding="8dp"
+        android:elevation="2dp">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_animation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        app:lottie_rawRes="@raw/loading1"
-        app:lottie_autoPlay="false"
-        app:lottie_loop="true"
-        android:visibility="gone" />
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/dummy"
+            android:layout_margin="5dp"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/search_icon"
+            android:hint="Search for photos..."
+            android:padding="8dp"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textColor="@color/colorPrimaryText"
+            android:textColorHint="@color/colorSecondaryText" />
+    </RelativeLayout>
+
+    <!-- Scrollable Options -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bottom_nav_background"
-        app:itemIconTint="@color/colorPrimaryText"
-        android:padding="12dp"
-        app:itemPaddingTop="8dp"
-        android:layout_margin="12dp"
-        app:itemTextColor="@color/colorSecondaryText"
-        app:itemBackground="@drawable/bottom_nav_item_selected"
-        app:menu="@menu/bottom_nav_menu" />
-
-</RelativeLayout>
+        android:layout_marginTop="12dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="horizontal" />
+</LinearLayout>
