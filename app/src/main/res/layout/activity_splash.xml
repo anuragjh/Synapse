@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorBackground"
     android:layout_height="match_parent">
 
     <RelativeLayout
@@ -12,56 +13,57 @@
         android:gravity="center"
         android:layout_margin="50dp">
 
-<!--        <com.airbnb.lottie.LottieAnimationView-->
-<!--            android:id="@+id/splashAnimationView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="500dp"-->
-<!--            android:padding="5dp"-->
-<!--            app:lottie_autoPlay="true"-->
-<!--            app:lottie_loop="true"-->
-<!--            app:lottie_rawRes="@raw/splash_animation" />-->
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:src="@drawable/logo"
-    android:id="@+id/logo"
-    />
-<!--        <TextView-->
-<!--            android:id="@+id/appName"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_above="@id/loading"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:text="@string/app_name"-->
-<!--            android:textSize="24sp"-->
-<!--            android:textColor="@color/colorPrimaryText"-->
-<!--            android:textStyle="bold"-->
-<!--            android:layout_marginTop="8dp" />-->
-
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/splashAnimationView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:padding="5dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/splash_animation" />
+<!--<ImageView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="300dp"-->
+<!--    android:src="@drawable/logo"-->
+<!--    android:id="@+id/logo"-->
+<!--    android:layout_marginBottom="200dp"-->
+<!--    app:tint="@color/colorPrimaryText" />-->
         <TextView
-            android:id="@+id/tagline"
+            android:id="@+id/appName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:layout_marginTop="4dp"
-            android:text="Connect. Learn. Innovate."
+            android:layout_below="@id/splashAnimationView"
+            android:layout_centerHorizontal="true"
+            android:text="@string/app_name"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimaryText"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_above="@+id/tagline"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:paddingTop="300dp"
+            android:padding="20dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading1" />
+        <TextView
+            android:id="@+id/tagline"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@id/appName"
+            android:text="Connect. Share. Innovate."
             android:textColor="@color/colorSecondaryText"
-            android:textSize="20sp"
-            android:layout_margin="10dp"
+            android:textSize="16dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:textStyle="bold"
             />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/loading"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:padding="28dp"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/loading" />
 
     </RelativeLayout>
 

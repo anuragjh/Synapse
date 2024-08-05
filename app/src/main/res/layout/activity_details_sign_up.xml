@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".DetailsSignUp">
+
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerInside"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/back_icon"
+        android:contentDescription="Back"
+        app:tint="@color/colorPrimaryVariant" />
+
+    <!-- Title -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/logoAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/backButton"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/user_profile_animation" />
+
+    <!-- Welcome Message -->
+    <TextView
+        android:id="@+id/welcomeMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logoAnimation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="Fill Up Your Details"
+        android:fontFamily="@font/nunito_variable"
+        android:textColor="@color/colorPrimaryVariant"
+        android:textSize="32sp"
+        android:textFontWeight="900"
+        android:textStyle="bold" />
+
+    <!-- Email EditText -->
+    <LinearLayout
+        android:id="@+id/emailContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeMessage"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/nameIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/dummy"
+            app:tint="@color/colorSecondaryText" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Name"
+            android:textColorHint="@color/colorSecondaryText"
+            android:inputType="textEmailAddress"
+            android:paddingStart="8dp"
+            android:textColor="@color/colorPrimaryText" />
+    </LinearLayout>
+
+    <!-- DOB EditText -->
+    <LinearLayout
+        android:id="@+id/dobContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailContainer"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/dobicon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/date_icon"
+            app:tint="@color/colorSecondaryText" />
+
+        <EditText
+            android:id="@+id/dobEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Year Of Birth"
+            android:maxLength="4"
+            android:textColorHint="@color/colorSecondaryText"
+            android:inputType="date"
+            android:paddingStart="8dp"
+            android:textColor="@color/colorPrimaryText" />
+    </LinearLayout>
+
+
+    <!-- Custom Profession EditText -->
+    <LinearLayout
+        android:id="@+id/customProfessionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dobContainer"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        android:background="@drawable/edittext_background"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/professionicon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/name_icon"
+            app:tint="@color/colorSecondaryText" />
+
+        <EditText
+            android:id="@+id/customProfessionEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Enter your profession"
+            android:textColorHint="@color/colorSecondaryText"
+            android:paddingStart="8dp"
+            android:inputType="text"
+            android:maxLength="8"
+            android:textColor="@color/colorPrimaryText" />
+    </LinearLayout>
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customProfessionContainer"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:padding="12dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Next"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:visibility="visible"/>
+</RelativeLayout>

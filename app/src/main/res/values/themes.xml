@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Base application theme -->
     <style name="Theme.TechTangle" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary colors -->
@@ -25,5 +23,12 @@
         <!-- Text colors -->
         <item name="android:textColorPrimary">@color/colorPrimaryText</item>
         <item name="android:textColorSecondary">@color/colorSecondaryText</item>
+
+        <!-- Navigation Bar -->
+        <item name="android:navigationBarColor">@color/colorSecondaryText</item>
+<!--        <item name="android:navigationBarDividerColor">@color/colorSecondaryText</item>-->
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 </resources>
