@@ -31,7 +31,6 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User not found"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="6dp"
             android:fontFamily="sans-serif-thin"
@@ -47,7 +46,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Unknown"
             android:layout_toRightOf="@id/profile_image"
             android:layout_below="@id/username"
             android:textStyle="bold"
@@ -80,45 +78,45 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/circular_bg"
             android:padding="8dp"
-            android:src="@drawable/dummy"
+            android:src="@drawable/icon_setting"
             android:layout_toLeftOf="@id/notification_button"
             android:layout_centerVertical="true"
             android:elevation="1dp" />
     </RelativeLayout>
 
-    <!-- Search Bar -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/search_bar_bg"
-        android:padding="8dp"
-        android:elevation="2dp">
+<!--    &lt;!&ndash; Search Bar &ndash;&gt;-->
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="@drawable/search_bar_bg"-->
+<!--        android:padding="8dp"-->
+<!--        android:elevation="2dp">-->
 
-        <ImageView
-            android:id="@+id/search_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/dummy"
-            android:layout_margin="5dp"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/search_icon"-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:src="@drawable/dummy"-->
+<!--            android:layout_margin="5dp"/>-->
 
-        <EditText
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/search_icon"
-            android:hint="Search for photos..."
-            android:padding="8dp"
-            android:background="@android:color/transparent"
-            android:inputType="text"
-            android:textColor="@color/colorPrimaryText"
-            android:textColorHint="@color/colorSecondaryText" />
-    </RelativeLayout>
+<!--        <EditText-->
+<!--            android:id="@+id/search_bar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_toEndOf="@id/search_icon"-->
+<!--            android:hint="Search for photos..."-->
+<!--            android:padding="8dp"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:inputType="text"-->
+<!--            android:textColor="@color/colorPrimaryText"-->
+<!--            android:textColorHint="@color/colorSecondaryText" />-->
+<!--    </RelativeLayout>-->
 
     <!-- Scrollable Options -->
     <androidx.recyclerview.widget.RecyclerView

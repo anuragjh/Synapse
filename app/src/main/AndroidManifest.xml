@@ -4,6 +4,8 @@
     <!-- Add necessary permissions here -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -16,9 +18,14 @@
         android:theme="@style/Theme.TechTangle"
         tools:targetApi="31">
         <activity
-            android:name=".AccountCreated"
+            android:name=".Profile"
             android:exported="false" />
-        <!-- Activity declarations -->
+        <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".AccountCreated"
+            android:exported="false" /> <!-- Activity declarations -->
         <activity
             android:name=".UserNameSignUp"
             android:exported="false" />

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Light Theme Colors -->
     <!-- Primary colors -->
     <color name="colorPrimary">#82B1FF</color> <!-- Deep Purple -->
     <color name="colorPrimaryVariant">#5979AF</color> <!-- Darker Purple -->
@@ -10,7 +10,7 @@
 
     <!-- Background and surface colors -->
     <color name="colorBackground">#FFFFFF</color> <!-- White -->
-    <color name="colorSurface">#F5F5F5</color> <!-- Light Gray -->
+    <color name="colorSurface">#D2000000</color> <!-- Light Gray -->
 
     <!-- Text colors -->
     <color name="colorPrimaryText">#212121</color> <!-- Dark Gray for better readability -->
@@ -19,11 +19,16 @@
     <!-- Additional colors -->
     <color name="colorError">#B00020</color> <!-- Red for errors -->
     <color name="colorOnPrimary">#FFFFFF</color> <!-- White text on primary -->
-    <color name="colorOnSecondary">#000000</color> <!-- Black text on secondary -->
+    <color name="colorOnSecondary">#434242</color> <!-- Black text on secondary -->
     <color name="darkGray">#424242</color> <!-- Dark Gray for text and icons -->
 
-    <!-- Accent colors for a trendy look -->
-    <color name="colorAccent1">#00FF0A</color> <!-- Pink -->
+    <!-- Accent colors -->
+    <color name="colorAccent1">#00FF0A</color> <!-- Green -->
     <color name="colorAccent2">#FFC107</color> <!-- Amber -->
     <color name="colorAccent3">#FF5252</color> <!-- Red -->
+    <color name="colorAccent4">#6124B1</color> <!-- Night Mode -->
+    <color name="colorAccent5">#13B2C3</color> <!-- Notification -->
+    <color name="colorAccent6">#E6A326</color> <!-- Private Account -->
+    <color name="colorAccent7">#D95F69</color> <!-- Security -->
 </resources>
+

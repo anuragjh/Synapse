@@ -1,5 +1,5 @@
 <resources>
-    <!-- Base application theme -->
+    <!-- Light Theme -->
     <style name="Theme.TechTangle" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary colors -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -26,9 +26,18 @@
 
         <!-- Navigation Bar -->
         <item name="android:navigationBarColor">@color/colorSecondaryText</item>
-<!--        <item name="android:navigationBarDividerColor">@color/colorSecondaryText</item>-->
 
         <!-- Status Bar -->
-        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorSurface</item>
     </style>
+
+
+
+    <!--  switch style-->
+    <style name="Switch" parent="Theme.AppCompat.DayNight">
+        <item name="colorControlActivated">@color/colorSurface</item>
+        <item name="colorSwitchThumbNormal">@color/colorOnPrimary</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+    </style>
+
 </resources>
