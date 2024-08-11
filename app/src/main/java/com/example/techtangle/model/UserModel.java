@@ -9,18 +9,20 @@ public class UserModel {
     private String dob;
     private String profession ;
     private String password;
+    private boolean publicAccount;
 
 
     public UserModel() {
     }
 
-    public UserModel(String name, String username, String email, String dob, String profession, String password) {
+    public UserModel(String name, String username, String email, String dob, String profession, String password,boolean publicAccount) {
         this.name = name;
         this.username = username;
         this.email = email;
         this.dob = dob;
         this.profession = profession;
         this.password = password;
+        this.publicAccount = publicAccount;
     }
 
     public String getName() {
@@ -69,5 +71,13 @@ public class UserModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isPublicAccount() {
+        return publicAccount;
+    }
+
+    public void setPublicAccount(boolean publicAccount) {
+        this.publicAccount = publicAccount;
     }
 }

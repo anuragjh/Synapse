@@ -2,6 +2,7 @@ package com.example.techtangle.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 public class AndroidUtil {
 
@@ -40,12 +41,16 @@ public class AndroidUtil {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USERNAME, null);
     }
-    public static String getCachedUsername(Context context) {
+    public static String getCachedname(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
         return prefs.getString(KEY_USERNAME, "User not found");
     }
 
     public static String getCachedOccupation(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
+        return prefs.getString(KEY_OCCUPATION, "Unknown");
+    }
+    public static String getCachedUsername(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
         return prefs.getString(KEY_OCCUPATION, "Unknown");
     }
@@ -56,5 +61,14 @@ public class AndroidUtil {
         editor.putString(KEY_USERNAME, username);
         editor.putString(KEY_OCCUPATION, occupation);
         editor.apply();
+    }
+    public static void cacheUsername(Context context, String username) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFERENCES_FILE, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(KEY_USERNAME, username);
+        editor.apply();
+    }
+    public static void showToast(Context context,String message){
+        Toast.makeText(context,message,Toast.LENGTH_LONG).show();
     }
 }

@@ -158,6 +158,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 // Navigate to main activity
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -176,12 +177,16 @@ public class LoginActivity extends AppCompatActivity {
     private void setInProgress(boolean inProgress) {
         if (inProgress) {
             progressBar.setVisibility(View.VISIBLE);
-            loginButton.setEnabled(false);
-            signupButton.setEnabled(false);
+            loginButton.setVisibility(View.GONE);
+            signupButton.setVisibility(View.GONE);
+            dividerText.setVisibility(View.GONE);
+            dividerLine.setVisibility(View.GONE);
         } else {
             progressBar.setVisibility(View.GONE);
-            loginButton.setEnabled(true);
-            signupButton.setEnabled(true);
+            loginButton.setVisibility(View.VISIBLE);
+            signupButton.setVisibility(View.VISIBLE);
+            dividerText.setVisibility(View.VISIBLE);
+            dividerLine.setVisibility(View.VISIBLE);
         }
     }
 

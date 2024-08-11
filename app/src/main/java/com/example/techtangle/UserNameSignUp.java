@@ -44,8 +44,9 @@ public class UserNameSignUp extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         boolean isLoggedIn = sharedPreferences.getBoolean(KEY_IS_LOGGED_IN, false);
         if (isLoggedIn) {
-            // Redirect to MainActivity if already logged in
-            startActivity(new Intent(UserNameSignUp.this, MainActivity.class));
+            Intent intent = new Intent(UserNameSignUp.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
             finish();
             return;
         }
@@ -142,7 +143,7 @@ public class UserNameSignUp extends AppCompatActivity {
 
         setInProgress(true);
 
-        UserModel user = new UserModel(name, username, email, dob, profession, password);
+        UserModel user = new UserModel(name, username, email, dob, profession, password,true);
 
         db.collection("users")
                 .document(username)
@@ -158,7 +159,9 @@ public class UserNameSignUp extends AppCompatActivity {
 
                     Toast.makeText(UserNameSignUp.this, "Account Created successfully", Toast.LENGTH_SHORT).show();
                     // Navigate to AccountCreated activity
-                    startActivity(new Intent(UserNameSignUp.this, AccountCreated.class));
+                    Intent intent = new Intent(UserNameSignUp.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                     finish();
                 })
                 .addOnFailureListener(e -> {

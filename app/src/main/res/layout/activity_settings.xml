@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".Settings">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back_icon"
+            android:contentDescription="Back"
+            app:tint="@color/colorOnSecondary" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorOnSecondary"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/profile"
+                android:contentDescription="Profile Picture" />
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/usernameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="12sp"
+                android:layout_gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/GoTo"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:layout_gravity="center"
+                android:text="Go To Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/colorOnPrimary"
+                android:background="@drawable/round_bg_settings"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/round_bg_settings_white"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!-- Dark mode-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/nightmodeicon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/night_icon"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"
+                        android:tint="@color/colorOnPrimary"
+                        android:contentDescription="Dark Mode Icon" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Dark mode"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/nightmodeicon"
+                        android:layout_marginStart="20dp"/>
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:switchMinWidth="50dp"
+                        android:theme="@style/Switch"/>
+
+                </RelativeLayout>
+                <!-- Notification-->
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/notificationIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/icons_notification"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"
+                        android:tint="@color/colorOnPrimary"
+                        android:contentDescription="Notification Icon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Mute notifications"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/notificationIcon"
+                        android:layout_marginStart="20dp"/>
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/notificationsSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:switchMinWidth="50dp"
+                        android:theme="@style/Switch"/>
+
+                </RelativeLayout>
+                <!-- Private account-->
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/privateaccicon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/name_icon"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"
+                        android:tint="@color/colorOnPrimary"
+                        android:contentDescription="Private Account Icon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Private account"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:tint="@color/colorOnPrimary"
+                        android:layout_toEndOf="@id/privateaccicon"
+                        android:layout_marginStart="20dp"/>
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/publicAccountSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:switchMinWidth="50dp"
+                        android:theme="@style/Switch"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/round_bg_settings_white"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!-- Security-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/securityIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/security_privacy_icon"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"
+                        android:tint="@color/colorOnPrimary"
+                        android:contentDescription="Security and Privacy Icon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Security &amp; Privacy"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/securityIcon"
+                        android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/go_to_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        app:tint="@color/colorOnPrimary"
+                        android:contentDescription="Go to Security and Privacy" />
+
+                </RelativeLayout>
+                <!-- Language-->
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/langicon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/language_icon"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"
+                        android:tint="@color/colorOnPrimary"
+                        android:contentDescription="Language Icon"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Language"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/langicon"
+                        android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/go_to_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        app:tint="@color/colorOnPrimary"
+                        android:contentDescription="Go to Language" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/round_bg_settings_white"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <!-- Contact us-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/contactusicon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/contact_us_icon"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"
+                        app:tint="@color/colorOnPrimary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Contact us"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/contactusicon"
+                        android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/go_to_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        app:tint="@color/colorOnPrimary" />
+
+                </RelativeLayout>
+                <!--About us-->
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/aboutusIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/about_us_icon"
+                        android:tint="@color/colorOnPrimary"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="About us"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/aboutusIcon"
+                        android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/go_to_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        app:tint="@color/colorOnPrimary" />
+
+                </RelativeLayout>
+                <!-- Faqs-->
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/FaqsIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/faqs_icon"
+                        android:tint="@color/colorOnPrimary"
+                        android:background="@drawable/round_bg_nignt_mode"
+                        android:padding="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="FAQs"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/FaqsIcon"
+                        android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/go_to_icon"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        app:tint="@color/colorOnPrimary" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/logoutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:paddingStart="30dp"
+                android:layout_marginBottom="30dp"
+                android:paddingEnd="30dp"
+                android:layout_gravity="center"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textColor="@color/colorOnPrimary"
+                android:background="@color/colorError"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

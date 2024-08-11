@@ -1,6 +1,9 @@
 package com.example.techtangle;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private String username;
     private RecyclerView recyclerView;
     private FirebaseFirestore db;
+    private ImageView settings_button,profile_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         usernameTextView = findViewById(R.id.username);
         occupationTextView = findViewById(R.id.occupation);
         recyclerView = findViewById(R.id.recycler_view);
+        settings_button = findViewById(R.id.settings_button);
+        profile_image= findViewById(R.id.profile_image);
 
         username = AndroidUtil.getUsername(this);
 
@@ -46,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
         // Load cached user data
         loadCachedUserData();
 
+        settings_button.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+        });
+        profile_image.setOnClickListener(v -> {
+            Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
+        });
+
         if (NetworkUtil.isNetworkConnected(this)) {
             // Fetch and update user data from Firestore
             fetchUserData();
@@ -54,14 +69,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Initialize RecyclerView
-        List<String> options = Arrays.asList("Trending", "Gen Z", "NEWz", "Coding Points", "Abstract", "Cityscape", "Portraits", "Macro", "Events", "Black & White");
-        OptionAdapter optionAdapter = new OptionAdapter(options);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setAdapter(optionAdapter);
+//        List<String> options = Arrays.asList("Trending", "Gen Z", "NEWz", "Coding Points", "Abstract", "Cityscape", "Portraits", "Macro", "Events", "Black & White");
+//        OptionAdapter optionAdapter = new OptionAdapter(options);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+//        recyclerView.setAdapter(optionAdapter);
     }
 
     private void loadCachedUserData() {
-        String cachedUsername = AndroidUtil.getCachedUsername(this);
+        String cachedUsername = AndroidUtil.getCachedname(this);
         String cachedOccupation = AndroidUtil.getCachedOccupation(this);
 
         if (cachedUsername != null) {
